@@ -25,7 +25,14 @@ searchButton.addEventListener('click', function() {
     })
     //recieves the actual data from the API
     .then(function(data) {
-        console.log('data received:', data);
+        //updating the image element src attribute
+        imageElement.scroll.src = data.data.images.original.url;
+
+        //resetting the search input value
+        searchInput.value = '';
+
+        //rest the feedback paragraph (clear any previous errors)
+        feedBackElement.textContent = '';
     })
     //handling any errors
     .catch(function(error) {
