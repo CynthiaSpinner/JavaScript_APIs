@@ -26,7 +26,7 @@ searchButton.addEventListener('click', function() {
     //recieves the actual data from the API
     .then(function(data) {
         //updating the image element src attribute
-        imageElement.scroll.src = data.data.images.original.url;
+        imageElement.src = data.data.images.original.url;
 
         //resetting the search input value
         searchInput.value = '';
@@ -37,6 +37,6 @@ searchButton.addEventListener('click', function() {
     //handling any errors
     .catch(function(error) {
         console.error(error);
-        feedbackElement.textContent = error.message;
+        feedBackElement.textContent = error.message;
     });
 });
