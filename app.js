@@ -12,9 +12,16 @@ const feedBackElement = document.getElementById('feedback');
 searchButton.addEventListener('click', function() {
     const searchTerm = searchInput.value;
 
-    const apiKey = 'a3LGbtvE75BnCiQYIXhPWZm9pwV9jL8H';
+    // Get API key from configuration
+    const apiKey = CONFIG.GIPHY_API_KEY;
+    
+    // Validate API key exists
+    if (!apiKey || apiKey === 'your_api_key_here') {
+        feedBackElement.textContent = 'Error: Please configure your Giphy API key in config.js';
+        return;
+    }
 
-    const url = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${searchTerm}`;
+    const url = `${CONFIG.GIPHY_BASE_URL}/translate?api_key=${apiKey}&s=${encodeURIComponent(searchTerm)}`;
 
     fetch(url)
 

@@ -28,16 +28,29 @@ Open `index.html` in your browser to start searching for GIFs!
 
 ## 🚦 Getting Started
 
+### Quick Setup
+
 1. **Clone or download** this repository
 2. **Get your Giphy API key**:
    - Visit [developers.giphy.com](https://developers.giphy.com/)
-   - Create an account and get your API key
-3. **Update the API key** in `app.js`:
+   - Create an account and get your API key from the dashboard
+3. **Configure your API key**:
+   - Copy `config.example.js` to `config.js`
+   - Replace `'your_api_key_here'` with your actual Giphy API key:
    ```javascript
-   const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your actual key
+   const CONFIG = {
+       GIPHY_API_KEY: 'your_actual_api_key_here',
+       // ... other settings
+   };
    ```
 4. **Open `index.html`** in your web browser
 5. **Start searching** for GIFs!
+
+### 🔒 Security Note
+
+- The `config.js` file contains your API key and is excluded from version control
+- Never commit your actual API key to a public repository
+- Use `config.example.js` as a template for other developers
 
 ## 📁 Project Structure
 
@@ -46,6 +59,9 @@ JavaScript_APIs/
 ├── index.html          # Main HTML file
 ├── styles.css          # Custom CSS styling
 ├── app.js             # JavaScript functionality
+├── config.js          # API configuration (excluded from git)
+├── config.example.js   # Configuration template
+├── .gitignore         # Git ignore rules
 └── README.md          # Project documentation
 ```
 
