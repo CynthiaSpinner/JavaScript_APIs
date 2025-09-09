@@ -36,6 +36,7 @@ searchButton.addEventListener('click', function() {
     })
     //handling any errors
     .catch(function(error) {
-        console.log('error:', error);
+        console.error(error);
+        feedbackElement.textContent = error.message;
     });
 });
