@@ -1,8 +1,3 @@
-console.log("Hello World!\n==========\n");
-
-// Exercise 1 Section
-console.log("EXERCISE 1:\n==========\n");
-
 const searchButton = document.getElementById('submitSearch');
 const searchInput = document.getElementById('searchWord');
 const imageElement = document.querySelector('#imageContainer img');
